@@ -8,12 +8,13 @@ def updatePos(pos,code):
     elif code == "L":
         new_pos = [pos[0] - 1, pos[1]]
 
+     ## This needs to be adjusted
     if new_pos[0] <= 1 and new_pos[0] >= -1 and new_pos[1] <= 1 and new_pos[1] >= -1:
         return new_pos
     else:
         return pos
 
-def posToNum(pos):
+def posToNum(pos):  ## This needs to be adjusted
     num = pos[0] + 2 + 3 * ( 1 - pos[1])
     return num
 
@@ -21,7 +22,7 @@ with open("input.txt") as f:
     content = f.readlines()
 content = [x.strip() for x in content]
 
-pos = [0, 0]
+pos = [0, 0]  ## This needs to be adjusted
 
 for i in range(len(content)):
     code = content[i]
