@@ -3,23 +3,24 @@ with open("input.txt") as f:
     content = f.readlines()
 content = [x.strip().split() for x in content]
 
-results = [int(i) for i in content[0]]
-min_index = (results.index(min(results)))
+count = 0
 
-indexes = [0, 1, 2]
+def testTriangle(results):
+	
+	checks = [0, 0, 0]
+	
+	if results[0] + results[1] > results[2]: checks[0] = 1
+	if results[1] + results[2] > results[0]: checks[1] = 1
+	if results[0] + results[2] > results[1]: checks[2] = 1
 
-del indexes[min_index]
-# new_indexes = indexes.pop(min_index)
-print(indexes)
-
-def testTriangle(lengths):
-	results = [int(i) for i in content[0]]
-	min_index = (results.index(min(results)))
-	indexes = [0, 1, 2]
-	del indexes[min_index]
-
-	if results[indexes[0]] + results[indexes[1]] > results[min_index]:
+	if sum(checks) == 3:
 		return 1
 	else: return 0
 
-print(testTriangle(content))
+for j in range(len(content)):
+	results = [int(i) for i in content[j]]
+	# print(results)
+	# print(testTriangle(results))
+	count += testTriangle(results)
+
+print(count)
