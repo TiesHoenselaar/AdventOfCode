@@ -18,12 +18,17 @@ with open("input.txt") as f:
     content = f.readlines()
 content = [x.strip().replace('[',',').replace(']',',').split(',') for x in content]
 
-
-print(content[0])
 count = 0
 for j in range(len(content)):
-	count += testTSL(content[j])
+	sum1 = 0
+	sum2 = 0
+	for k in range(len(content[j])):
+		if k%2 == 0:
+			sum1 += testABBA(content[j][k])
+		elif k%2 == 1:
+			sum2 += testABBA(content[j][k])
+	
+	if sum1 >= 1 and sum2 == 0:
+		count += 1
 
 print(count)
-
-print(testABBA('aaaaaaaabb'))
