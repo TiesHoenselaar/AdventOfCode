@@ -40,7 +40,7 @@ with open("input.txt") as f:
 
 # print(content[1][0:10])
 
-for k in range(35):
+for k in range(len(content)):
 	if content[k][0:4] == 'rect':
 		size = content[k][5:-1].split('x')
 		screen = createRectangle(screen,int(size[0]),int(size[1]))
@@ -49,8 +49,13 @@ for k in range(35):
 		information = (cleanedUp[1].split(' '))
 		screen = shiftRow(screen,int(information[0]),int(information[2]))
 	elif content[k][0:10] == 'rotate col':
-		cleanedUp = (content[k][16:-1].split('='))
-		information = (cleanedUp[1].split(' '))
+		information =  content[k][16:-1].split(' ')
 		screen = shiftColumn(screen,int(information[0]),int(information[2]))
 
 printScreen(screen)
+
+counter = 0
+for l in range(len(screen)):
+	counter += sum(screen[l])
+
+print(counter)
