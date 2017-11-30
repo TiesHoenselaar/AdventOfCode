@@ -1,19 +1,21 @@
 def int2bin(i):
-    if i == 0: return "0"
-    s = ''
-    count_1 = 0
-    while i:
-        if i & 1 == 1:
-            s = "1" + s
-            count_1 += 1
-        else:
-            s = "0" + s
-        i /= 2
-    return s,count_1
+	if i == 0: 
+		return "0"
+	s = ''
+	count_1 = 0
+	while i:
+		i = int(i)
+		if i & 1 == 1:
+			s = "1" + s
+			count_1 += 1
+		else:
+			s = "0" + s
+		i /= 2
+	return s,count_1
 
-input = 1358
+inputNumber = 1358
 
-size = 100
+size = 200
 
 startpointX = 1
 startpointY = 1
@@ -28,7 +30,7 @@ for i in range(size):
 
 for x in range(size):
 	for y in range(size):
-		num1 = x*x + 3*x + 2*x*y + y + y*y + 10
+		num1 = int(x*x + 3*x + 2*x*y + y + y*y + inputNumber)
 		# num2 = int2bin(num1)
 		num1Bin,numberOfOnes = int2bin(num1)
 
