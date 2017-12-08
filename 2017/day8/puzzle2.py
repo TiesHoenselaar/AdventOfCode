@@ -58,10 +58,13 @@ for i in range(len(content)):
 			elif plusMinus == 'dec':
 				globals()[instruction[0]] -= int(instruction[2])
 
-variablesValues = []
-for j in range(len(variables)):
-	variablesValues.append(globals()[variables[j]])
+	variablesValues = []
+	for j in range(len(variables)):
+		variablesValues.append(globals()[variables[j]])
+	
+	currentMaxValue = max(variablesValues)
+	if currentMaxValue > maxValue:
+		maxValue = currentMaxValue
 	
 
-print(max(variablesValues))
-
+print(maxValue)
