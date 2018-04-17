@@ -25,6 +25,7 @@ def insertRange(blockedList, insert, count):
         print('b')
         count += 1
         blockedList = blockedList + [insert]
+    
     else:
         for index in range(len(blockedList)-1):
             if insert[0] > blockedList[index][1] and insert[1] < blockedList[index+1][0] :
