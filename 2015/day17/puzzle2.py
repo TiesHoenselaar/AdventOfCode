@@ -20,7 +20,7 @@ containers_int = [33, 14, 18, 20, 45, 35, 16, 35, 1, 13, 18, 13, 50, 44, 48, 6, 
 containers = [str(x) for x in containers_int]
 
 total = 0
-for i in range(1,len(containers) + 1):
+for i in [4]:
     combs = combinations(containers, i)
 
     for comb in combs:
