@@ -1,4 +1,4 @@
-input_file = "puzzle2/input.txt"
+input_file = "day1/puzzle2/input.txt"
 
 
 total_calories = 0
